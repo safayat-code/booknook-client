@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-base-100 font-sans text-base-content antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 400;
+  }
+  :focus-visible {
+    outline: 2px solid theme("colors.secondary");
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply font-display text-3xl leading-tight md:text-4xl;
+  }
+  .section-sub {
+    @apply mt-2 max-w-xl text-base-content/70;
+  }
+  .page-wrap {
+    @apply mx-auto w-full max-w-7xl px-4 py-12 sm:px-6;
+  }
+}
+
+/* Swiper pagination */
+.swiper-pagination-bullet {
+  background: #f2f7f5 !important;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  background: #d8a94a !important;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
